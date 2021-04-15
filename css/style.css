@@ -19,6 +19,9 @@
   src: url("../fonts/OpenSans-Bold.woff")
     format("woff");
 }
+body {
+	font-family: "Open Sans";
+}
 .wrap {
   width: 1200px;
   padding: 0 15px;
@@ -27,12 +30,18 @@
   font-family: "Open Sans";
   position: relative;
 }
+h2 {  
+	font-size: 20px;
+	line-height: 24px;  
+}
+h2, h3 {
+	text-transform: uppercase;
+	font-weight: bold;
+}
 a {
   text-decoration: none;
 }
-a:hover,
-.subscription-btn:hover,
-.search-btn:hover {
+a:hover, .subscription-btn:hover, .search-btn:hover {
   opacity: 0.5;
 }
 
@@ -80,7 +89,51 @@ a:hover,
   text-transform: uppercase;
   max-width: 700px;
 }
+/*Блок трэнды*/
+.trands {
+    margin-bottom: 65px;
+}
+.head-trands {
+	margin-bottom: 25px;
+}
+.head-trands h2 {
+	text-align: center;	
+	color: #000000;
+}
+.trands-blocks {
+    display: flex;
+    justify-content: space-between;
+}
 
+.trand-block {
+    width: calc(25% - 5px);
+	position: relative;
+}
+.img-trand:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+	z-index: 1;
+}
+.img-trand img {
+    max-width: 100%;
+	display: inherit;
+}
+.trand-content {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    border: 3px solid rgba(181,159,91,0.6);
+    width: calc(100% - 40px);
+    margin: 20px;
+    padding: 35px;
+    box-sizing: border-box;    
+}
+.trand-block-head h3 a {
+    color: #ffffff;
+}
 /*Контентная часть*/
 
 .wrap-content {
@@ -117,14 +170,8 @@ a:hover,
 .news-text-head {
   margin-bottom: 30px;
 }
-.news-text-head h2 {
-  line-height: 24px;
-}
 .news-text-head h2 a {
   color: #000;
-  text-transform: uppercase;
-  font-size: 20px;
-  font-weight: bold;
 }
 .news-text-info {
   margin-bottom: 50px;
@@ -155,10 +202,8 @@ a:hover,
 .sidebar-head h2 {
   text-align: center;
   font-size: 14px;
-  text-transform: uppercase;
-  font-weight: bold;
 }
-.sidebar-head h2::after {
+.sidebar-head h2::after, .head-trands h2::after {
   content: "";
   width: 65px;
   height: 3px;
@@ -187,7 +232,6 @@ a:hover,
 .new-post-text h3 a {
   color: #000;
   font-size: 14px;
-  text-transform: uppercase;
 }
 
 .serach-block {
