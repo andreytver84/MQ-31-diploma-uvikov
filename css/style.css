@@ -38,11 +38,13 @@ h2, h3 {
 	text-transform: uppercase;
 	font-weight: bold;
 }
+
 a {
-  text-decoration: none;
+	color: #b59f5b;
+	text-decoration: none;
 }
 a:hover, .subscription-btn:hover, .search-btn:hover {
-  opacity: 0.5;
+	opacity: 0.5;
 }
 
 /*Шапка сайта*/
@@ -203,7 +205,7 @@ a:hover, .subscription-btn:hover, .search-btn:hover {
   text-align: center;
   font-size: 14px;
 }
-.sidebar-head h2::after, .head-trands h2::after {
+.with-underline::after {
   content: "";
   width: 65px;
   height: 3px;
@@ -322,6 +324,87 @@ input {
   position: absolute;
   top: -2px;
   padding-left: 5px;
+}
+
+/*Блок с товарами*/
+
+.head-items {
+	margin-bottom: 30px;
+}
+
+.head-items h2 {
+    text-align: center;
+}
+
+.wrap-items {
+    display: flex;
+    justify-content: space-between;
+	margin-bottom: 65px;
+}
+
+.item {
+    width: calc(33% - 65px);
+	display: flex;
+    flex-direction: column;
+}
+.item-image {
+	padding: 17px;    
+    text-align: center;
+}
+
+.item-image img {
+    max-width: 100%;
+}
+.wrap-item-content {
+    padding: 40px 17px 17px;
+    margin-top: -50px;
+    border: 3px solid rgba(181,159,91,0.6);
+	height: 100%;
+}
+.item-content h3 {
+	font-size: 20px;
+	margin-bottom: 5px;
+}
+.item-content p {
+    font-size: 15px;
+}
+.wrap-price-btn {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.price-item-block {
+    flex-direction: column;
+    display: flex;
+    font-weight: bold;
+    justify-content: flex-end;
+    padding-bottom: 8px;
+}
+.price-item-block span {
+    line-height: 100%;
+}
+
+.price-item-block span:after {
+    content: " \20BD";
+	font-family: arial;
+}
+
+.price-item {
+    font-size: 20px;
+}
+
+.old-price {
+    font-size: 14px;
+    text-decoration: line-through;
+}
+a.btn-shop {
+    color: #ffffff;
+    background: #b59f5b;
+    padding: 20px 30px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 800;
+    display: block;
 }
 
 /*Подвал сайта*/
