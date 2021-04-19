@@ -4,7 +4,9 @@
   margin: 0;
   padding: 0;
 }
-
+body {
+	min-width: 360px;
+}
 @font-face {
   font-family: "Open Sans";
   font-style: normal;
@@ -23,7 +25,7 @@ body {
 	font-family: "Open Sans";
 }
 .wrap {
-  width: 1200px;
+  max-width: 1200px;
   padding: 0 15px;
   margin: 0 auto;
   z-index: 10;
@@ -47,6 +49,26 @@ a:hover, .subscription-btn:hover, .search-btn:hover {
 	opacity: 0.5;
 }
 
+/*Мобильное меню*/
+.hamburger {
+	position: relative;
+    display: none;
+    width: 25px;
+    height: 20px;
+    border-top: 3px solid #ffffff;
+    border-bottom: 3px solid #ffffff;
+    box-sizing: border-box;
+}
+
+.hamburger:before {
+  content: "";
+  position: absolute;
+  top: 5.5px;
+  left: 0px;
+  width: 100%;
+  border-top: 3px solid #ffffff;
+}
+
 /*Шапка сайта*/
 
 .header {
@@ -54,6 +76,9 @@ a:hover, .subscription-btn:hover, .search-btn:hover {
   padding: 25px 0 150px;
   position: relative;
   margin-bottom: 65px;
+  backgrount-repeat: none;
+  background-position: center;
+  background-size: cover;
 }
 .header:before {
   content: "";
@@ -82,6 +107,9 @@ a:hover, .subscription-btn:hover, .search-btn:hover {
   padding: 16px;
   font-size: 13px;
 }
+.menu ul li:last-child a {
+	padding-right: 0px;
+	}
 .header-title h1 {
   margin: 125px auto 0;
   color: #fff;
@@ -91,7 +119,9 @@ a:hover, .subscription-btn:hover, .search-btn:hover {
   text-transform: uppercase;
   max-width: 700px;
 }
+
 /*Блок трэнды*/
+
 .trands {
     margin-bottom: 65px;
 }
@@ -105,6 +135,7 @@ a:hover, .subscription-btn:hover, .search-btn:hover {
 .trands-blocks {
     display: flex;
     justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 .trand-block {
@@ -121,7 +152,9 @@ a:hover, .subscription-btn:hover, .search-btn:hover {
 }
 .img-trand img {
     max-width: 100%;
-	display: inherit;
+    display: inherit;
+    object-fit: cover;
+    width: 100%;
 }
 .trand-content {
     position: absolute;
@@ -133,9 +166,12 @@ a:hover, .subscription-btn:hover, .search-btn:hover {
     padding: 35px;
     box-sizing: border-box;    
 }
+
 .trand-block-head h3 a {
     color: #ffffff;
+	font-size: 20px;
 }
+
 /*Контентная часть*/
 
 .wrap-content {
@@ -340,6 +376,7 @@ input {
     display: flex;
     justify-content: space-between;
 	margin-bottom: 65px;
+	flex-wrap: wrap;
 }
 
 .item {
@@ -454,4 +491,127 @@ footer {
   color: #999999;
   font-size: 12px;
   font-weight: bold;
+}
+
+/*Адаптивность*/
+
+@media (max-width: 1199px) {
+	.header {
+		padding: 50px 0 125px;
+		margin-bottom: 50px;
+	}
+	.wrap {
+		padding: 0 35px;
+	}
+	.menu nav {
+		display: none;
+	}
+	.hamburger {
+		display: flex;
+	}
+	.header-title h1 {
+		font-size: 40px;
+	}
+	h2 {
+		font-size: 18px;
+	}
+	.trands {
+		margin-bottom: 50px;
+	}
+	.trand-block-head h3 a, .item-content h3 {
+		font-size: 17px;
+	}	
+	.trand-block {
+		width: calc(50% - 2px);
+		margin-bottom: 4px;
+	}
+	.item {
+		width: calc(50% - 10px);
+	}
+	.content {
+		width: calc(60% - 30px);
+	}
+	.sidebar {
+		width: 40%;
+	}
+	.news {
+		flex-direction: column;
+		border-bottom: 3px solid #eeeeee;
+		padding-bottom: 15px;
+		margin-bottom: 40px;
+	}
+	.news:last-child {
+		border-width: 0;
+	}
+	.news-img {
+		margin-right: 0;
+	}
+	.news-img img {
+		max-width: 100%;
+		width: 100%;
+	}
+	.news-text-info {
+		margin-bottom: 30px;
+	}
+	
+}
+
+@media (max-width: 768px) {
+	.wrap {
+		padding: 0 15px;
+	}
+	.header {
+    padding: 50px 0 215px;
+	background-position: 30% 0px;
+	}
+	.header-top {
+    justify-content: flex-end;
+	}
+	.logo {
+    position: absolute;
+    text-align: center;
+    width: calc(100% - 30px);
+    top: 205px;
+	}
+	.logo img {
+		width: 270px
+	}
+	.header-title h1 {
+		margin-top: 275px;
+		font-size: 26px;
+	}
+	h2 {
+		font-size: 16px;
+	}
+	.trand-block, .item, .content, .sidebar {
+		width: 100%;
+	}
+	.trand-content {
+		margin: 15px;
+		width: calc(100% - 30px);
+	}
+	.wrap-content {
+		display: block;
+	}	
+	.news:last-child {
+		border-width: 3px;
+	}
+	.news-img {
+		margin-right: 0px;
+	}
+	.news-text-head, .news-text-info {
+		margin-bottom: 24px;
+	}
+	.sidebar-head {
+    margin-bottom: 20px;
+	}
+	.serach-block {
+		padding: 15px 0;
+	}	
+	.tags-cloud {
+    margin: 40px 0;
+	}
+	.items {
+		margin-top: 30px;
+	}
 }
