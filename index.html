@@ -516,5 +516,42 @@
 		</div>
 	  </div>
 	</footer>
+	
+	<div class="overlay">
+		<div class="wrap-form">
+			<div class="block-btn-close">
+				<a class="close">x</a>
+			</div>
+			<form id="feedback-form" method="post" action="form.php">
+				<div class="head-form">
+					<h2 class="with-underline">Ваш фидбэк</h2>
+				</div>
+				<div class="row-form">
+					<label for="ques1">Как часто вы заходите на сайт</label>
+					<select class="field" name="ques1" id="ques1">
+						<option value="Почти каждый день">Почти каждый день</option>
+						<option value="Раз в неделю">Раз в неделю</option>
+						<option value="Раз в месяц">Раз в месяц</option>
+					</select>
+				</div>
+				<div class="row-form">
+					<label >Вы подписаны на e-mail рассылку</label>
+					<div class="with-radio">
+						<input class="field" checked type="radio" name="radio1" id="radio1" value="Да"><label for="radio1">Да</label>
+						<input class="field" type="radio" name="radio2" id="radio2"  value="Нет"><label for="radio2">Нет</label>
+					</div>
+				</div>
+				<div class="row-form">
+					<label for="ques3">Расскажите какой контент вы хотели бы видеть на нашем сайте</label>
+					<textarea class="field" name="ques3" placeholder="Введите сообщение" placeholder="Может, больше рецептов?" >
+					</textarea>
+				</div>
+				<div class="wrap-form-btn">
+					<button class="field" type="submit">Отправить</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	
  </body>
 </html>
