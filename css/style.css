@@ -141,6 +141,8 @@ a:hover, .subscription-btn:hover, .search-btn:hover {
 .trand-block {
     width: calc(25% - 5px);
 	position: relative;
+	font-size: 20px;
+    line-height: 1.2em;
 }
 .img-trand:before {
     content: "";
@@ -163,13 +165,13 @@ a:hover, .subscription-btn:hover, .search-btn:hover {
     border: 3px solid rgba(181,159,91,0.6);
     width: calc(100% - 40px);
     margin: 20px;
-    padding: 35px;
+    padding: 1.75em;
     box-sizing: border-box;    
 }
 
 .trand-block-head h3 a {
     color: #ffffff;
-	font-size: 20px;
+	font-size: 1em;	
 }
 
 /*Контентная часть*/
@@ -493,7 +495,123 @@ footer {
   font-weight: bold;
 }
 
+/*Стили формы*/
+
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 100;
+    top: 0;
+    overflow-y: auto;
+    padding: 100px 30px 10px;
+	box-sizing: border-box;
+}
+
+.wrap-form form .field {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+.wrap-form {
+    max-width: 400px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 50px 35px;
+    position: relative;
+}
+.block-btn-close {
+    position: absolute;
+    z-index: 100;
+    top: -40px;
+    right: 0;
+    font-size: 30px;
+}
+
+.close {
+     color: #ffffff
+}
+
+.wrap-form .with-underline {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.wrap-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.row-form {
+    margin-bottom: 20px;
+}
+
+.wrap-form input, .wrap-form select, .wrap-form textarea {
+	width: 100%;
+	background: #f4f7f6;
+	color: rgba(0,0,0,0.54);
+	border: none;
+}
+.wrap-form .with-radio input {
+	display: none;
+}
+.with-radio {
+	display: flex;
+}
+.wrap-form select {
+    padding: 15px 35px 15px 15px;
+	background-image: url("../svg/form-arrows.svg");
+	background-repeat: no-repeat;
+	background-position: 98% center;
+	background-size: auto 50%;	
+}
+.with-radio input + label::before, .with-radio input:disabled + label::before,
+.with-radio input:not(:checked) + label::before, 
+.with-radio input:not(:focus) + label::before,
+.with-radio input:not(:active) + label::before
+ {
+    content: '';
+    display: block;
+	height: 25px;
+    width: 25px;
+	margin-right: 10px;
+    background-image: url("../svg/form-empty-circle.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+    background-size: cover;
+}
+.with-radio input:not(:disabled):not(:checked) + label:hover::before,
+.with-radio input:not(:disabled):active + label::before,
+.with-radio input:focus + label::before,
+.with-radio input:checked + label::before {
+	background-image: url("../svg/form-circle.svg");
+	
+}
+
+.with-radio  label {
+    margin-right: 20px;
+	display: flex;
+}
+.wrap-form textarea {
+    padding: 15px;
+    box-sizing: border-box;
+    height: 100px;
+}
+.wrap-form button {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    border: none;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: #b59f5b;
+}
+
 /*Адаптивность*/
+@media (max-width: 1380px) and (min-width: 1199px) {
+	.trand-block {
+		font-size: 16px;
+	}
+}
 
 @media (max-width: 1199px) {
 	.header {
@@ -615,3 +733,16 @@ footer {
 		margin-top: 30px;
 	}
 }
+@media (min-width: 641px) and (max-width: 1200px) and (orientation: landscape) {
+	.trand-block {
+		width: calc(25% - 5px);
+		font-size: 16px;
+	}
+}
+@media (max-width: 640px) and (orientation: landscape) {
+	.trand-block {
+		width: calc(50% - 5px);
+		font-size: 16px;
+	}
+}
+
